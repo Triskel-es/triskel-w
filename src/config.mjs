@@ -1,12 +1,12 @@
 export const SITE = {
-	name: 'AstroWind',
+	name: 'Triskel',
 
 	origin: 'https://astrowind.vercel.app',
 	basePathname: '/',
 	trailingSlash: false,
 
-	title: 'AstroWind — Your website with Astro + Tailwind CSS',
-	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
+	title: 'El title es triskel',
+	description: '🚀 Es nuestra descripcion',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
