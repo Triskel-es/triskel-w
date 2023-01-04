@@ -1,3 +1,5 @@
+import defaultImage from './assets/images/default.png';
+
 export const SITE = {
 	name: 'Triskel',
 
@@ -7,6 +9,8 @@ export const SITE = {
 
 	title: 'El title es triskel',
 	description: '🚀 Es nuestra descripcion',
+
+	defaultImage: defaultImage,
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
