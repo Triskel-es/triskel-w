@@ -1,14 +1,14 @@
 import defaultImage from './assets/images/default.png';
 
 export const SITE = {
-	name: 'AstroWind',
+	name: 'Triskel',
 
 	origin: 'https://astrowind.vercel.app',
 	basePathname: '/',
 	trailingSlash: false,
 
-	title: 'AstroWind — Your website with Astro + Tailwind CSS',
-	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
+	title: 'El title es triskel',
+	description: '🚀 Es nuestra descripcion',
 
 	defaultImage: defaultImage,
 
