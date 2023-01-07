@@ -1,25 +1,15 @@
 import defaultImage from './assets/images/default.png';
 
-<<<<<<< HEAD
-export const SITE = {
-	name: 'Triskel',
-=======
 const CONFIG = {
-	name: 'AstroWind',
->>>>>>> boss
+	name: 'Triskeel',
 
 	origin: 'https://astrowind.vercel.app',
 	basePathname: '/',
 	trailingSlash: false,
 
-<<<<<<< HEAD
 	title: 'El title es triskel',
 	description: '🚀 Es nuestra descripcion',
 
-=======
-	title: 'AstroWind — Your website with Astro + Tailwind CSS',
-	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
->>>>>>> boss
 	defaultImage: defaultImage,
 
 	defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
