@@ -3,11 +3,11 @@ import { SITE, BLOG } from '~/config.mjs';
 
 import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
+import Title from '~/components/blog/Title.astro';
 import Pagination from '~/components/common/Pagination.astro';
 
-import { fetchPosts } from '~/utils/posts';
-import { getCanonical, getPermalink, cleanSlug, CATEGORY_BASE } from '~/utils/permalinks';
-import Title from '~/components/blog/Title.astro';
+import { fetchPosts } from '~/utils/blog';
+import { CATEGORY_BASE } from '~/utils/permalinks';
 
 export async function getStaticPaths({ paginate }) {
 	if (BLOG?.disabled || BLOG?.category?.disabled) return [];
@@ -22,7 +22,7 @@ export async function getStaticPaths({ paginate }) {
 		paginate(
 			posts.filter((post) => typeof post.category === 'string' && category === post.category.toLowerCase()),
 			{
-				params: { category: cleanSlug(category), categories: CATEGORY_BASE || undefined },
+				params: { category: category, blog: CATEGORY_BASE || undefined },
 				pageSize: BLOG.postsPerPage,
 				props: { category },
 			}
@@ -34,10 +34,9 @@ const { page, category } = Astro.props;
 
 const currentPage = page.currentPage ?? 1;
 const meta = {
-	title: `Category '${category}' ${currentPage > 1 ? `— Page ${currentPage} ` : ''}— ${SITE.name}`,
+	title: `Category'${category}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
 	description: SITE.description,
-	canonical: getCanonical(getPermalink(category, 'category')),
-	noindex: true,
+	noindex: BLOG?.category?.noindex,
 };
 ---
 

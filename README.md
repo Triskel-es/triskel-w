@@ -3,13 +3,15 @@
 <img src="lighthouse-score.png" align="right"
      alt="AstroWind Lighthouse Score" width="100" height="358">
 
-**AstroWind** is a free and open-source template to make your website using **[Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account best practices. 🌟 **Most _starred_ & _forked_ Astro theme in 2022**.
+🌟 _Most *starred* & *forked* Astro theme in 2022_. 🌟
+
+**AstroWind** is a free and open-source template to make your website using **[Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
 
 ## Features
 
 - ✅ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
 - ✅ **Production-ready** scores in [Lighthouse](https://web.dev/measure/) and [PageSpeed Insights](https://pagespeed.web.dev/) reports.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed** ([@astrojs/rss](https://docs.astro.build/en/guides/rss/)), [**MDX** support](https://docs.astro.build/en/guides/integrations-guide/mdx/), **Categories & Tags**, **Social Share** buttons, ...
+- ✅ **Fast and SEO friendly blog** with automatic **RSS feed** ([@astrojs/rss](https://docs.astro.build/en/guides/rss/)), [**MDX** support](https://docs.astro.build/en/guides/integrations-guide/mdx/), **Categories & Tags**, **Social Share**, ...
 - ✅ **Image optimization** ([@astrojs/images](https://docs.astro.build/en/guides/integrations-guide/image/)) and **Font optimization**.
 - ✅ Generation of **project sitemap** based on your routes ([@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)).
 - ✅ **Open Graph tags** for social media sharing.
@@ -80,7 +82,6 @@ Inside AstroWind template, you'll see the following folders and files:
 │   │   ├── common/
 |   |   └── widgets/
 |   |       ├── Header.astro
-|   |       ├── Footer.astro
 |   |       └── ...
 │   ├── content/
 │   |   ├── blog/
@@ -93,17 +94,14 @@ Inside AstroWind template, you'll see the following folders and files:
 │   |   └── ...
 │   ├── pages/
 │   |   ├── [...blog]/
+|   |   |   ├── [category]/
+|   |   |   ├── [tag]/
 |   |   |   ├── [...page].astro
 |   |   |   └── [slug].astro
-│   |   ├── [...categories]/
-|   |   |   └── [category]/
-|   |   |       └── [...page].astro
-│   |   ├── [...tags]/
-|   |   |   └── [tag]/
-|   |   |       └── [...page].astro
 │   |   ├── index.astro
 |   |   ├── 404.astro
-|   |   └-- rss.xml.ts
+|   |   ├-- rss.xml.ts
+│   |   └── ...
 │   ├── utils/
 │   └── config.mjs
 ├── package.json
@@ -143,42 +141,49 @@ All commands are run from the root of the project, from a terminal:
 Basic configuration file: `./src/config.mjs`
 
 ```javascript
-export const SITE = {
+const CONFIG = {
   name: 'Example',
 
   origin: 'https://example.com',
   basePathname: '/', // Change this if you need to deploy to Github Pages, for example
   trailingSlash: false, // Generate permalinks with or without "/" at the end
 
-  title: 'Example - This is the homepage title of Example',
-  description: 'This is the homepage description of Example',
+  title: 'Example - This is the homepage title of Example', // default seo title
+  description: 'This is the homepage description of Example', // default seo descriptio
+  defaultImage: 'image.jpg', // default seo image
+
+  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
   googleSiteVerificationId: false, // or some value,
-};
-
-export const BLOG = {
-  disabled: false,
-  postsPerPage: 4,
 
   blog: {
     disabled: false,
-    pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
-  },
+    postsPerPage: 4,
 
-  post: {
-    disabled: false,
-    pathname: '', // empty for /some-post, value for /pathname/some-post
-  },
+    list: {
+      pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+      noindex: false,
+      disabled: false,
+    },
 
-  category: {
-    disabled: false,
-    pathname: 'category', // set empty to change from /category/some-category to /some-category
-  },
+    post: {
+      pathname: '', // empty for /some-post, value for /pathname/some-post
+      noindex: false,
+      disabled: false,
+    },
 
-  tag: {
-    disabled: false,
-    pathname: 'tag', // set empty to change from /tag/some-tag to /some-tag
+    category: {
+      pathname: 'category', // set empty to change from /category/some-category to /some-category
+      noindex: true,
+      disabled: false,
+    },
+
+    tag: {
+      pathname: 'tag', // set empty to change from /tag/some-tag to /some-tag
+      noindex: true,
+      disabled: false,
+    },
   },
 };
 ```

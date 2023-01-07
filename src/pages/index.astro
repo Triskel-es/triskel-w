@@ -1,6 +1,5 @@
 ---
 import { SITE } from '~/config.mjs';
-import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -17,7 +16,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const meta = {
 	title: SITE.title,
 	description: SITE.description,
-	canonical: getCanonical(getHomePermalink()),
+	dontUseTitleTemplate: true,
 };
 ---
 
