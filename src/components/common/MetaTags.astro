@@ -2,14 +2,18 @@
 import { AstroSeo } from '@astrolib/seo';
 import { GoogleAnalytics } from '@astrolib/analytics';
 import { getImage } from '@astrojs/image';
-import { getRelativeUrlByFilePath } from '~/utils/directories';
 
 import { SITE } from '~/config.mjs';
+import { MetaSEO } from '~/types';
+import { getPermalink, getCanonical } from '~/utils/permalinks';
+import { getRelativeUrlByFilePath } from '~/utils/directories';
+
 import Fonts from '~/components/common/Fonts.astro';
-import ExtraMetaTags from '~/components/common/ExtraMetaTags.astro';
 import SplitbeeAnalytics from './SplitbeeAnalytics.astro';
 
-import { MetaSEO } from '~/types';
+export interface Props extends MetaSEO {
+	dontUseTitleTemplate?: boolean;
+}
 
 const defaultImage = SITE.defaultImage
 	? (
@@ -22,19 +26,19 @@ const defaultImage = SITE.defaultImage
 	  ).src
 	: '';
 
-export interface Props extends MetaSEO {}
-
 const {
 	title = SITE.name,
 	description = '',
 	image: _image = defaultImage,
 
-	canonical,
+	canonical = getCanonical(String(Astro.url.pathname)),
 	noindex = false,
 	nofollow = false,
 
 	ogTitle = title,
 	ogType = 'website',
+
+	dontUseTitleTemplate = false,
 } = Astro.props;
 
 const image =
@@ -51,6 +55,7 @@ const image =
 
 <AstroSeo
 	title={title}
+	titleTemplate={dontUseTitleTemplate ? '%s' : `%s — ${SITE.name}`}
 	description={description}
 	canonical={String(canonical)}
 	noindex={noindex}
@@ -87,4 +92,6 @@ const image =
 
 {SITE.splitbeeAnalytics?.enabled && <SplitbeeAnalytics {...SITE.splitbeeAnalytics} />}
 
-<ExtraMetaTags />
+<link rel="shortcut icon" href={getPermalink('/favicon.ico')} />
+<link rel="icon" type="image/svg+xml" href={getPermalink('/favicon.svg')} />
+<link rel="mask-icon" href={getPermalink('/favicon.svg')} color="#8D46E7" />
