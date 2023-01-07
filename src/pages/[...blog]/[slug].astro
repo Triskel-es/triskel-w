@@ -1,20 +1,19 @@
 ---
-import { SITE, BLOG } from '~/config.mjs';
+import { BLOG } from '~/config.mjs';
 
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import ToBlogLink from '~/components/blog/ToBlogLink.astro';
 
-import { getCanonical, getPermalink, cleanSlug, POST_BASE } from '~/utils/permalinks';
-import { fetchPosts } from '~/utils/posts';
+import { getCanonical, getPermalink, POST_BASE } from '~/utils/permalinks';
+import { fetchPosts } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 
 export async function getStaticPaths() {
 	if (BLOG?.disabled || BLOG?.post?.disabled) return [];
-	const posts = await fetchPosts();
-	return posts.map((post) => ({
+	return (await fetchPosts()).map((post) => ({
 		params: {
-			slug: cleanSlug(post.slug),
+			slug: post.slug,
 			blog: POST_BASE || undefined,
 		},
 		props: { post },
@@ -25,11 +24,11 @@ const { post } = Astro.props;
 const url = getCanonical(getPermalink(post.slug, 'post'));
 
 const meta = {
-	title: `${post.title} — ${SITE.name}`,
+	title: post.title,
 	description: post.description,
-	canonical: post.canonical || url,
+	canonical: post.canonical || undefined,
 	image: await findImage(post.image),
-	ogTitle: post.title,
+	noindex: BLOG?.post?.noindex,
 	ogType: 'article',
 };
 ---

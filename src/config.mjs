@@ -1,42 +1,61 @@
 import defaultImage from './assets/images/default.png';
 
+<<<<<<< HEAD
 export const SITE = {
 	name: 'Triskel',
+=======
+const CONFIG = {
+	name: 'AstroWind',
+>>>>>>> boss
 
 	origin: 'https://astrowind.vercel.app',
 	basePathname: '/',
 	trailingSlash: false,
 
+<<<<<<< HEAD
 	title: 'El title es triskel',
 	description: '🚀 Es nuestra descripcion',
 
+=======
+	title: 'AstroWind — Your website with Astro + Tailwind CSS',
+	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
+>>>>>>> boss
 	defaultImage: defaultImage,
+
+	defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
-};
-
-export const BLOG = {
-	disabled: false,
-	postsPerPage: 4,
 
 	blog: {
 		disabled: false,
-		pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
-	},
+		postsPerPage: 4,
 
-	post: {
-		disabled: false,
-		pathname: '', // empty for /some-post, value for /pathname/some-post
-	},
+		list: {
+			pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+			noindex: false,
+			disabled: false,
+		},
 
-	category: {
-		disabled: false,
-		pathname: 'category', // set empty to change from /category/some-category to /some-category
-	},
+		post: {
+			pathname: '', // empty for /some-post, value for /pathname/some-post
+			noindex: false,
+			disabled: false,
+		},
 
-	tag: {
-		disabled: false,
-		pathname: 'tag', // set empty to change from /tag/some-tag to /some-tag
+		category: {
+			pathname: 'category', // set empty to change from /category/some-category to /some-category
+			noindex: true,
+			disabled: false,
+		},
+
+		tag: {
+			pathname: 'tag', // set empty to change from /tag/some-tag to /some-tag
+			noindex: true,
+			disabled: false,
+		},
 	},
 };
+
+export const SITE = { ...CONFIG, blog: undefined };
+export const BLOG = CONFIG.blog;
