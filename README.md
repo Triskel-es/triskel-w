@@ -5,7 +5,7 @@
 
 🌟 _Most *starred* & *forked* Astro theme in 2022_. 🌟
 
-**AstroWind** is a free and open-source template to make your website using **[Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
+**AstroWind** is a free and open-source template to make your website using **[Astro v2](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
 
 ## Features
 
@@ -40,7 +40,6 @@
   - [Commands](#commands)
   - [Configuration](#configuration)
   - [Deploy](#deploy)
-- [Roadmap](#roadmap)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Related Projects](#related-projects)
 - [Contributing](#contributing)
@@ -75,36 +74,40 @@ Inside AstroWind template, you'll see the following folders and files:
 ├── src/
 │   ├── assets/
 │   │   ├── images/
-|   |   └── styles/
-|   |       └── base.css
+│   │   └── styles/
+│   │       └── base.css
 │   ├── components/
 │   │   ├── blog/
 │   │   ├── common/
-|   |   └── widgets/
-|   |       ├── Header.astro
-|   |       └── ...
+│   │   ├── widgets/
+│   │   │   ├── Header.astro
+│   │   │   └── ...
+│   │   ├── CustomStyles.astro
+│   │   └── Logo.astro
 │   ├── content/
-│   |   ├── blog/
-│   |   |   ├── post-slug-1.md
-│   |   |   ├── post-slug-2.mdx
-│   |   |   └── ...
-│   |   └-- config.ts
+│   │   ├── post/
+│   │   │   ├── post-slug-1.md
+│   │   │   ├── post-slug-2.mdx
+│   │   │   └── ...
+│   │   └-- config.ts
 │   ├── layouts/
-│   |   |── BaseLayout.astro
-│   |   └── ...
+│   │   ├── BaseLayout.astro
+│   │   └── ...
 │   ├── pages/
-│   |   ├── [...blog]/
-|   |   |   ├── [category]/
-|   |   |   ├── [tag]/
-|   |   |   ├── [...page].astro
-|   |   |   └── [slug].astro
-│   |   ├── index.astro
-|   |   ├── 404.astro
-|   |   ├-- rss.xml.ts
-│   |   └── ...
+│   │   ├── [...blog]/
+│   │   │   ├── [category]/
+│   │   │   ├── [tag]/
+│   │   │   ├── [...page].astro
+│   │   │   └── index.astro
+│   │   ├── index.astro
+│   │   ├── 404.astro
+│   │   ├-- rss.xml.ts
+│   │   └── ...
 │   ├── utils/
-│   └── config.mjs
+│   ├── config.mjs
+│   └── data.js
 ├── package.json
+├── astro.config.mjs
 └── ...
 ```
 
@@ -172,26 +175,26 @@ const CONFIG = {
     disabled: false,
     postsPerPage: 4,
 
+    post: {
+      permalink: '/%slug%', // variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      noindex: false,
+      disabled: false,
+    },
+
     list: {
       pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
       noindex: false,
       disabled: false,
     },
 
-    post: {
-      pathname: '', // Empty for /some-post, value for /pathname/some-post
-      noindex: false,
-      disabled: false,
-    },
-
     category: {
-      pathname: 'category', // Set empty to change from /category/some-category to /some-category
+      pathname: 'category', // Category main path /category/some-category
       noindex: true,
       disabled: false,
     },
 
     tag: {
-      pathname: 'tag', // Set empty to change from /tag/some-tag to /some-tag
+      pathname: 'tag', // Tag main path /tag/some-tag
       noindex: true,
       disabled: false,
     },
@@ -229,24 +232,6 @@ Clone this repository on own GitHub account and deploy to Vercel:
 
 <br>
 
-## Roadmap
-
-### Base
-
-- [ ] Improve blog design (More generic design that adapts to more needs).
-- [ ] Create component or utilities for related posts.
-- [ ] Add more _shortcodes_ or _embed_ functions to posts in Markdown: (eg Video, Tweet...).
-- [ ] Add more Tailwind components useful for most scenarios (Features, Contact, Call to Actions, Content, FAQs...)
-- [ ] Add commonly used example pages (Ex: About, Terms, Profile, Services...).
-- [ ] Create detailed documentation with best practices and redesign tips.
-
-### Advanced
-
-- [ ] Create external library or place with useful Tailwind components.
-- [ ] Create examples of AstroWind in CodeSanbox or a similar platform that can be easily synchronized with new updates. (Redesign, Integration with React or Svelte components, Use of Tailwind plugins, Connection to headless CMS ...).
-
-<br>
-
 ## Frequently Asked Questions
 
 - Why?
@@ -270,4 +255,4 @@ Initially created by [onWidget](https://onwidget.com) and maintained by a commun
 
 ## License
 
-**AstroWind** is licensed under the Unlicense license — see the [LICENSE](https://github.com/onwidget/astrowind/blob/main/LICENSE.md) file for details.
+**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
