@@ -3,7 +3,7 @@ import slugify from 'limax';
 import { SITE, BLOG } from '~/config.mjs';
 import { trim } from '~/utils/utils';
 
-const trimSlash = (s: string) => trim(trim(s, '/'));
+export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
   const paths = params
     .map((el) => trimSlash(el))
@@ -20,10 +20,11 @@ export const cleanSlug = (text = '') =>
     .map((slug) => slugify(slug))
     .join('/');
 
+export const POST_PERMALINK_PATTERN = trimSlash(BLOG?.post?.permalink || '/%slug%');
+
 export const BLOG_BASE = cleanSlug(BLOG?.list?.pathname);
-export const POST_BASE = cleanSlug(BLOG?.post?.pathname);
-export const CATEGORY_BASE = cleanSlug(BLOG?.category?.pathname);
-export const TAG_BASE = cleanSlug(BLOG?.tag?.pathname);
+export const CATEGORY_BASE = cleanSlug(BLOG?.category?.pathname || 'category');
+export const TAG_BASE = cleanSlug(BLOG?.tag?.pathname) || 'tag';
 
 /** */
 export const getCanonical = (path = ''): string | URL => new URL(path, SITE.origin);
@@ -34,15 +35,15 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 
   switch (type) {
     case 'category':
-      permalink = createPath(CATEGORY_BASE, cleanSlug(slug));
+      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
-      permalink = createPath(TAG_BASE, cleanSlug(slug));
+      permalink = createPath(TAG_BASE, trimSlash(slug));
       break;
 
     case 'post':
-      permalink = createPath(POST_BASE, cleanSlug(slug));
+      permalink = createPath(trimSlash(slug));
       break;
 
     case 'page':
