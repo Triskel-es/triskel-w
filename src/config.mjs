@@ -1,13 +1,13 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'Triskeel',
+  name: 'Triskel',
 
   origin: 'https://astrowind.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'El title es triskel',
+  title: 'El titulo es triskel',
   description: '🚀 Es nuestra descripcion',
 
   defaultImage: defaultImage,
