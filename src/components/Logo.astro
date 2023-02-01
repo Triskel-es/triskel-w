@@ -1,9 +1,54 @@
 ---
+import { Icon } from 'astro-icon';
+
+import { getHomePermalink, getBlogPermalink } from '~/utils/permalinks';
 ---
 
-<img class="w-20" src="/logo.webp" alt="3k" />
-<span class="self-center ml-2 text-2xl font-extrabold text-gray-900 whitespace-nowrap dark:text-white">TRISKEL</span>
+<a href={getHomePermalink()}> <img class="w-20" src="/logo.webp" alt="3k" /></a>
 
-<!-- <span class="self-center ml-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-	TRISKEL</span
-> -->
+<div class="self-center ml-10 font-extrabold text-gray-900 whitespace-nowrap dark:text-white">
+  <ul class="flex space-x-5 text-5xl">
+    <li>
+      <a href={getBlogPermalink()}
+        >T
+        <span class="text-blue-500"> <Icon name="tabler:rss" class="w-5 h-5" /></span>
+      </a>
+    </li>
+    <li>
+      <a href={getBlogPermalink()}
+        >R
+        <Icon name="tabler:rss" class="w-5 h-5" />
+      </a>
+    </li>
+    <li>
+      <a href={getBlogPermalink()}
+        >I
+        <Icon name="tabler:rss" class="w-5 h-5" />
+      </a>
+    </li>
+    <li>
+      <a href={getBlogPermalink()}
+        >S
+        <Icon name="tabler:rss" class="w-5 h-5" />
+      </a>
+    </li>
+    <li>
+      <a href={getBlogPermalink()}
+        >K
+        <Icon name="tabler:rss" class="w-5 h-5" />
+      </a>
+    </li>
+    <li>
+      <a href={getBlogPermalink()}
+        >E
+        <Icon name="tabler:rss" class="w-5 h-5" />
+      </a>
+    </li>
+    <li>
+      <a href={getBlogPermalink()}
+        >L
+        <Icon name="tabler:rss" class="w-5 h-5" />
+      </a>
+    </li>
+  </ul>
+</div>
