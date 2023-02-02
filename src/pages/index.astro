@@ -2,6 +2,7 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
+import GaleriaOrigin from '~/components/widgets/GaleriaOrigin.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -21,6 +22,10 @@ const meta = {
 ---
 
 <Layout {meta}>
+  <!-- GaleriaOrigin -->
+
+  <GaleriaOrigin />
+
   <!-- Hero Widget ******************* -->
 
   <Hero
