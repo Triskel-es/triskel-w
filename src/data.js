@@ -3,9 +3,6 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'B',
-    },
-    {
       text: 'P',
       links: [
         {
@@ -33,6 +30,9 @@ export const headerData = {
           href: getPermalink('/privacy'),
         },
       ],
+    },
+    {
+      text: 'B',
     },
     {
       text: 'L',
