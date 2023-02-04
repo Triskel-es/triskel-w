@@ -3,6 +3,7 @@ import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Trabajos from '~/components/widgets/Trabajos.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -43,11 +44,69 @@ const meta = {
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
   <!-- <Note /> -->
 
-  <!-- Features Widget *************** -->
+  <Trabajos
+    highlight="Trabajos"
+    title="Trabajos más recientes"
+    subtitle="Aquí ponemos lo que nos apetece y decimos lo que queremos cuando podemos"
+    items={[
+      {
+        title: 'Headers',
+        description:
+          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Heros',
+        description:
+          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Features',
+        description:
+          'Display your product in action and how the Features actually create a solution for your target customer.',
+        icon: 'flat-color-icons:todo-list',
+      },
+      {
+        title: 'Content',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Testimonial',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Contact',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Footers',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'icon-park:page-template',
+      },
+    ]}
+  />
 
   <Features
     highlight="Features"
@@ -199,9 +258,9 @@ const meta = {
   <!-- Features2 Widget ************** -->
 
   <Features2
+    highlight="Trabajos"
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    highlight="Components"
     items={[
       {
         title: 'Headers',
