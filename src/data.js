@@ -32,7 +32,8 @@ export const headerData = {
       ],
     },
     {
-      text: 'B',
+      text: 'work',
+      href: getPermalink('/work'),
     },
     {
       text: 'L',
