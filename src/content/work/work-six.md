@@ -1,12 +1,12 @@
 ---
-title: Namanala
-word: Namanala
+title: La eminencia
+word: Eminencia
 publishedDate: '2023-01-12'
 image:
-  src: ../src/assets/images/works/namanala.png
+  src: ../src/assets/images/works/eminencia.png
   alt: 'alt imagen'
 author: filus
-description: Primer trabajo niño soplando velas
+description: todo Lo que puedes esperar en El Mundo de Neo
 excerpt: Con esto hacemos un breve resumen de todo lo que ha pasado en el cumpleaños del niño cuando cumple 8 años
 category: Trabajos
 canonicalURL: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css

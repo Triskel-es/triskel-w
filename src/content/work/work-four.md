@@ -1,5 +1,6 @@
 ---
-title: copia Eight
+title: Negra
+word: Negra
 publishedDate: '2023-01-12'
 image:
   src: ../src/assets/images/works/negra.png

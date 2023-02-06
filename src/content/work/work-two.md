@@ -1,5 +1,6 @@
 ---
-title: copia Eight
+title: girl
+word: Chica
 publishedDate: '2023-01-12'
 image:
   src: ../src/assets/images/works/girl.png
