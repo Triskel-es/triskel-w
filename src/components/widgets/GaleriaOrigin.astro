@@ -1,31 +1,113 @@
 ---
 import { Image, Picture } from '@astrojs/image/components';
 
-const styleImg = 'w-0 flex-1 object-cover opacity-50 hover:w-max hover:opacity-100 hover:contrast-1.25';
+const cssImg = 'w-0 flex-1 object-cover opacity-50 hover:w-max hover:opacity-100 hover:contrast-1.25';
 ---
 
 <div class="w-full mx-auto">
-  <section class="flex h-[1024px]">
-    <img class={styleImg} src="origin/denton.jpg" alt="exhalacion" />
-    <img class={styleImg} src="origin/creciendo.jpg" alt="exhalacion" />
-    <img class:list={[styleImg, 'object-center']} src="origin/stringless.jpg" alt="exhalacion" />
-    <img class:list={[styleImg, 'object-center']} src="origin/meditando.jpg" alt="exhalacion" />
-    <img class={styleImg} src="origin/infinito.jpg" alt="exhalacion" />
-    <img class:list={[styleImg, 'object-center']} src="origin/cambio.jpg" alt="exhalacion" />
-    <img class={styleImg} src="origin/hojas.jpg" alt="exhalacion" />
-    <img class={styleImg} src="origin/vortex.jpg" alt="exhalacion" />
-    <img class={styleImg} src="origin/tercera.jpg" alt="exhalacion" />
-    <img class={styleImg} src="origin/lado.jpg" alt="lado" />
-    <img class={styleImg} src="origin/lembranza.jpg" alt="lembranza" />
-    <img class:list={[styleImg, 'object-right']} src="origin/maria.jpg" alt="maria" />
-    <img class:list={[styleImg, 'object-left']} src="origin/malleus.jpg" alt="malleus" />
+  <section class="flex min-h-screen">
     <Image
-      class={styleImg}
-      src={import('~/assets/images/hojas.jpg')}
+      class={cssImg}
+      src={import('~/assets/images/origin/denton.jpg')}
       format="jpeg"
       height={1024}
       aspectRatio="1024:768"
-      alt="The Astro logo"
+      alt="denton"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/creciendo.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="creciendo"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/stringless.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="stringless"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/meditando.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="meditando"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/infinito.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="infinito"
+    />
+    <Image
+      class={cssImg + ' object-right'}
+      src={import('~/assets/images/origin/cambio.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="cambio"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/hojas.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="hojas"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/vortex.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="vortex"
+    />
+    <Image
+      class={cssImg}
+      src={import('~/assets/images/origin/tercera.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="tercera"
+    />
+    <Image
+      class={cssImg + ' object-left'}
+      src={import('~/assets/images/origin/lado.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="lado"
+    />
+    <Image
+      class={cssImg + ' object-right-top'}
+      src={import('~/assets/images/origin/lembranza.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="lembranza"
+    />
+    <Image
+      class={cssImg + ' object-right'}
+      src={import('~/assets/images/origin/maria.jpg')}
+      format="jpeg"
+      height={1024}
+      alt="maria"
+    />
+    <Image
+      class={cssImg + ' object-left'}
+      src={import('~/assets/images/origin/malleus.jpg')}
+      format="jpeg"
+      height={1024}
+      aspectRatio="1024:768"
+      alt="malleus"
     />
   </section>
 </div>
