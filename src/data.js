@@ -3,23 +3,16 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'P',
+      text: '',
+      icon: 'tabler:clear-all',
       links: [
         {
-          text: 'Features',
-          href: '#',
+          text: 'Trabajos',
+          href: '#trabajos',
         },
         {
-          text: 'Pricing',
-          href: '#',
-        },
-        {
-          text: 'About us',
-          href: '#',
-        },
-        {
-          text: 'Contact',
-          href: '#',
+          text: 'work',
+          href: getPermalink('/work'),
         },
         {
           text: 'Terms',
@@ -31,16 +24,8 @@ export const headerData = {
         },
       ],
     },
-    {
-      text: 'work',
-      href: getPermalink('/work'),
-    },
-    {
-      text: 'L',
-      href: getBlogPermalink(),
-    },
   ],
-  actions: [{ type: 'button', text: 'C', href: '#' }],
+  // actions: [{ type: 'button', text: 'C', href: '#' }],
 };
 
 export const footerData = {
