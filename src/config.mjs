@@ -7,14 +7,14 @@ const CONFIG = {
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'El titulo es triskel',
-  description: '🚀 Es nuestra descripcion',
+  title: 'Triskel',
+  description: 'donde puedes transformar lo que imaginas, en una película ',
 
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'dark', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
-  language: 'en',
+  language: 'es',
   textDirection: 'ltr',
 
   dateFormatter: new Intl.DateTimeFormat('en', {

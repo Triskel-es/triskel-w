@@ -2,6 +2,8 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
+
 import Hero from '~/components/widgets/Hero.astro';
 import Trabajos from '~/components/widgets/Trabajos.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -25,22 +27,14 @@ const meta = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
+    callToAction={{ text: '', href: getPermalink('#trabajos'), icon: 'tabler:device-laptop' }}
+    callToAction2={{ text: '+++++', href: '#features' }}
     image={}
   >
-    <Fragment slot="title">
-      Free template for <span class="hidden lg:inline">create your website <br class="2xl:hidden" /> with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS
-    </Fragment>
+    <Fragment slot="title">Trae el proyecto</Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-      Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+      y podrás transformar lo que imaginas, en una película, <br /> una vez que vengas, nunca querrás alejarte de su magia.
     </Fragment>
   </Hero>
 
