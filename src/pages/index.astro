@@ -47,6 +47,86 @@ const meta = {
     items={}
   />
 
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="El Triskel en la cultura celta representa el equilibrio entre cuerpo, mente y espíritu."
+    items={[
+      {
+        title: '<span class="font-medium">Druida</span>',
+        description:
+          'Los druidas, son junto a los bardos, aquellos que poseían e*l awen* (inspiración) en la Galicia celta. Asimismo, eran los únicos que podían portar el símbolo sagrado del triskel con el que realizaban su magia.',
+        icon: 'tabler:arrow-down',
+      },
+      {
+        title: '<span class="font-medium">Magia</em>',
+        description:
+          'En nuestro espacio triskel, arropado por esta filosofía, encontrarás este triple equilibrio desde el cual podrás postproducir tus películas (desde el color a los formatos finales) gracias a nuestra magia contemporánea basada en nuestro conocimiento, equipo humano y tecnologías como la Inteligencia Artificial aplicadas a la postproducción de imágenes :)',
+        icon: 'tabler:arrow-down',
+      },
+      {
+        title: '<span class="font-medium">Espacio</span>',
+        description:
+          'Y si esto fuera poco, estamos ubicados en un lugar excepcional para el alma. El espacio está enterrado en la tierra (como un refugio druida) rodeados de naturaleza, aire puro, vistas increíbles y hasta tenemos un manantial de agua natural. Todo brota desde la tierra de la que procedemos, a nuestras raíces.',
+        icon: 'tabler:arrow-down',
+      },
+      {
+        title: 'Listo!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/colors.jpg'),
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    highlight="Items"
+    title="De qué estamos hechos"
+    subtitle="Lo que nos hace diferentes es lo que nos hace únicos"
+    items={[
+      {
+        title: 'Datos/Piedra',
+        description: 'los recuerdos/el espacio es insólito y está arraigado a una tierra única.',
+        icon: 'tabler:box',
+        color: 'blue-500',
+      },
+      {
+        title: 'Agua',
+        description: 'disponemos de un extraordinario manantial de agua natural in_situ.',
+        icon: 'tabler:droplet',
+        color: 'cyan-500',
+      },
+      {
+        title: 'Tierra',
+        description: 'las vistas japonesas a las montañas gallegas lo convierte en un lugar singular.',
+        icon: 'tabler:planet',
+        color: 'green-500',
+      },
+      {
+        title: 'Energia',
+        description: 'nuestra energía es 100% renovable, el entorno es sostenible.',
+        icon: 'tabler:bolt',
+        color: 'orange-500',
+      },
+      {
+        title: 'Fuego',
+        description: 'nuestro equipo humano arde en talento y lo transforma en magia.',
+        icon: 'tabler:flame',
+        color: 'red-500',
+      },
+      {
+        title: 'Viento',
+        description: 'nuestro aire es puro y cambia, no parará nunca de evolucionar en medios y tecnología.',
+        icon: 'tabler:windmill',
+        color: 'violet-500',
+      },
+    ]}
+  />
+
   <Features
     highlight="Features"
     title="What you get with AstroWind"
@@ -158,104 +238,6 @@ const meta = {
       src: import('~/assets/images/vintage.jpg'),
       alt: 'Vintage Image',
     }}
-  />
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula.',
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/creativity.jpg'),
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    highlight="Trabajos"
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    items={[
-      {
-        title: 'Headers',
-        description:
-          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Display your product in action and how the Features actually create a solution for your target customer.',
-        icon: 'flat-color-icons:todo-list',
-      },
-      {
-        title: 'Content',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'icon-park:page-template',
-      },
-    ]}
   />
 
   <!-- HighlightedPosts Widget ******* -->

@@ -11,6 +11,14 @@ export const headerData = {
           href: '#trabajos',
         },
         {
+          text: 'Raices',
+          href: '#raices',
+        },
+        {
+          text: 'Items',
+          href: '#items',
+        },
+        {
           text: 'work',
           href: getPermalink('/work'),
         },
