@@ -19,6 +19,14 @@ export const headerData = {
           href: '#items',
         },
         {
+          text: 'Servicios',
+          href: '#servicios',
+        },
+        {
+          text: 'Koordenadas',
+          href: '#koordenadas',
+        },
+        {
           text: 'work',
           href: getPermalink('/work'),
         },

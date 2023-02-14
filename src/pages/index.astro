@@ -11,6 +11,7 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import Koordenadas from '~/components/widgets/Koordenadas.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -127,6 +128,71 @@ const meta = {
     ]}
   />
 
+  <!-- Content Widget **************** -->
+
+  <Content
+    highlight="Servicios"
+    title="qué te podemos ofrecer..."
+    subtitle="Nos encanta trabajar a tres bandas para controlar el proceso final."
+    items={[
+      {
+        title: 'Postproduccion',
+        description: 'Sabemos hacer postproducción de imagen para cine.',
+      },
+      {
+        title: 'Color',
+        description: 'Estamos especializados en trabajos de color.',
+      },
+      {
+        title: 'Formatos',
+        description: 'Exportamos todo tipo de formatos, somos un laboratorio audiovisual.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Áreas de post-producción digital
+      </h3>Puedes hacer uso, solo del espacio y su equipación sin técnicos o contratar a nuestro equipo humano.
+    </Fragment>
+
+    <Fragment slot="content2">
+      Escríbenos para consultar cualquiera de nuestras disponibilidad y reservar fechas, no lo dudes, ya seas un
+      profesional del audiovisual o un artista te trataremos de la única forma que sabemos tratar, maravillosamente :)
+    </Fragment>
+  </Content>
+
+  <Koordenadas
+    isReversed={false}
+    highlight="Koordenadas"
+    title="dónde nos puedes encontrar..."
+    subtitle="Disponemos de una excelente ubicación"
+    items={[
+      {
+        title: 'Carretera',
+        description: 'por carretera nacional hasta el estudio',
+      },
+      {
+        title: 'Tren',
+        description: 'hay trenes directos cada día a cualquier gran ciudad',
+      },
+      {
+        title: 'Avion',
+        description:
+          'a 1-1/2 horas en coche está el aeropuerto más cercano (Santiago de Compostela) con destinos a todas las ciudades europeas',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Accesos</h3>
+      se puede acceder fácilmente al Triskel por:
+    </Fragment>
+
+    <Fragment slot="content2">
+      Además como puedes ver en el mapa, cerca del lugar están todos los servicios esenciales a parte de ser parte de
+      una de las zonas más bonitas de Galicia, la Ribeira Sacra :)
+    </Fragment>
+  </Koordenadas>
+
   <Features
     highlight="Features"
     title="What you get with AstroWind"
@@ -175,71 +241,6 @@ const meta = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-        description:
-          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-        description:
-          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-        description:
-          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/caos.jpg'),
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
-  />
-
   <!-- HighlightedPosts Widget ******* -->
 
   <LatestPosts
@@ -255,62 +256,6 @@ const meta = {
       'astrowind-template-in-depth.md',
     ]}
   />
-
-  <!-- FAQs Widget ******************* -->
-
-  <!-- <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
-    highlight="FAQs"
-    items={[
-      [
-        {
-          question: 'What do I need to start?',
-          answer:
-            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-        },
-        {
-          question: 'How to install the Astro + Tailwind CSS template?',
-          answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
-        },
-        {
-          question: "What's something that you don't understand?",
-          answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-        },
-      ],
-      [
-        {
-          question: "What's an example of when you changed your mind?",
-          answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-        },
-        {
-          question: 'What is something that you would like to try again?',
-          answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-        },
-        {
-          question: 'If you could only ask one question to each person you meet, what would that question be?',
-          answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-        },
-      ],
-    ]}
-  /> -->
-
-  <!-- Stats Widget ****************** -->
-
-  <!-- <Stats
-    items={[
-      { name: 'Downloads', value: '132K' },
-      { name: 'Stars', value: '24.8K' },
-      { name: 'Forks', value: '10.3K' },
-      { name: 'Users', value: '48.4K' },
-    ]}
-  /> -->
-
   <!-- CallToAction Widget *********** -->
 
   <CallToAction

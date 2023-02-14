@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon';
 
 import { getPermalink } from '~/utils/permalinks';
 
-import FourCard from './FourCard.astro';
+import FourMaps from './FourMaps.astro';
 
 interface Item {
   title: string;
@@ -37,15 +37,15 @@ const {
 
 <section
   class:list={[{ 'pt-0 md:pt-0': isAfterContent }, 'scroll-m-20 mt-20 bg-blue-50 dark:bg-slate-900 py-16 md:py-20']}
-  id="servicios"
+  id="koordenadas"
 >
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
     {
       (title || subtitle || highlight) && (
-        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl ">
           {highlight && (
             <p
-              class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase"
+              class="text-base text-primary dark:text-orange-500 font-semibold tracking-wide uppercase "
               set:html={highlight}
             />
           )}
@@ -65,7 +65,10 @@ const {
   </div>
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div class="md:basis-1/2 self-center">
+      <div class="relative m-auto max-w-4xl">
+        <FourMaps />
+      </div>
+      <div class="mt-8 md:basis-1/2 self-center">
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
@@ -88,14 +91,7 @@ const {
           )
         }
       </div>
-      <div class="relative m-auto max-w-4xl">
-        <FourCard />
-      </div>
     </div>
-    <a href={getPermalink('/#contacto')}>
-      {
-        content2 && <div class="mt-12 mb-12 text-xl dark:text-slate-400 dark:hover:text-blue-700" set:html={content2} />
-      }</a
-    >
+    {content2 && <div class="mt-12 mb-12 text-xl dark:text-slate-400 " set:html={content2} />}
   </div>
 </section>

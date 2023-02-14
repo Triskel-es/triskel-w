@@ -1,0 +1,60 @@
+---
+import { Image, Picture } from '@astrojs/image/components';
+
+const cssImg = 'h-full object-cover transition-all group-hover:rotate-12 group-hover:scale-125';
+---
+
+<div class="flex items-center justify-center">
+  <div class="mx-auto max-w-6xl pt-16">
+    <div class="flex [&:hover>div]:w-16 [&>div:hover]:w-[30rem]">
+      <div
+        class="group relative h-96 w-[30rem] cursor-pointer overflow-hidden shadow-lg shadow-black/30 transition-all duration-200"
+      >
+        <Image
+          class={cssImg}
+          src={import('~/assets/images/abstractas/Stringless.jpg')}
+          format="jpeg"
+          height={612}
+          aspectRatio="1:1"
+          alt="stringless"
+        />
+      </div>
+      <div
+        class="group relative h-96 w-16 cursor-pointer overflow-hidden shadow-lg shadow-black/30 transition-all duration-200"
+      >
+        <Image
+          class={cssImg}
+          src={import('~/assets/images/abstractas/Vortex.jpg')}
+          format="jpeg"
+          height={612}
+          aspectRatio="1:1"
+          alt="vortex"
+        />
+      </div>
+      <div
+        class="group relative h-96 w-16 cursor-pointer overflow-hidden shadow-lg shadow-black/30 transition-all duration-200"
+      >
+        <Image
+          class={cssImg}
+          src={import('~/assets/images/abstractas/Vortexx.jpg')}
+          format="jpeg"
+          height={612}
+          aspectRatio="1:1"
+          alt="vortexx"
+        />
+      </div>
+      <div
+        class="group relative h-96 w-16 cursor-pointer overflow-hidden shadow-lg shadow-black/30 transition-all duration-200"
+      >
+        <Image
+          class={cssImg}
+          src={import('~/assets/images/abstractas/Malleus.jpg')}
+          format="jpeg"
+          height={612}
+          aspectRatio="1:1"
+          alt="malleus"
+        />
+      </div>
+    </div>
+  </div>
+</div>
