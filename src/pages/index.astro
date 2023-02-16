@@ -12,6 +12,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import Koordenadas from '~/components/widgets/Koordenadas.astro';
+import UltimasLecturas from '~/components/blog/UltimasLecturas.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -240,20 +241,11 @@ const meta = {
     ]}
   />
 
-  <!-- HighlightedPosts Widget ******* -->
-
-  <LatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-			Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-			Astro is a very interesting technology. Thanks.
+  <UltimasLecturas
+    title="Lecturas"
+    information={`En la sección de lecturas podrás encontrar documentación con cada nuevo artículo sobre los pasos importantes que debes conocer en cómo elaboramos nuestros proyectos
 		`}
-    postIds={[
-      'get-started-website-with-astro-tailwind-css.md',
-      'how-to-customize-astrowind-to-your-brand.md',
-      'useful-resources-to-create-websites.md',
-      'astrowind-template-in-depth.md',
-    ]}
+    postIds={['1.md', '2.md', '3.md', '4.md']}
   />
   <!-- CallToAction Widget *********** -->
 
