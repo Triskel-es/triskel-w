@@ -27,6 +27,10 @@ export const headerData = {
           href: '#koordenadas',
         },
         {
+          text: 'Espacio',
+          href: '#espacio',
+        },
+        {
           text: 'work',
           href: getPermalink('/work'),
         },
