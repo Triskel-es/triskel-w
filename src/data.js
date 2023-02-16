@@ -31,15 +31,23 @@ export const headerData = {
           href: '#espacio',
         },
         {
-          text: 'work',
+          text: 'Lecturas',
+          href: '#lecturas',
+        },
+        {
+          text: '...Contacto',
+          href: '#contacto',
+        },
+        {
+          text: '...work',
           href: getPermalink('/work'),
         },
         {
-          text: 'Terms',
+          text: '...Terms',
           href: getPermalink('/terms'),
         },
         {
-          text: 'Privacy policy',
+          text: '...Privacy policy',
           href: getPermalink('/privacy'),
         },
       ],
