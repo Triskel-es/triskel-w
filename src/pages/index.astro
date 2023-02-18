@@ -2,20 +2,16 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
-import { getHomePermalink, getPermalink } from '~/utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Trabajos from '~/components/widgets/Trabajos.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Koordenadas from '~/components/widgets/Koordenadas.astro';
+import Features from '~/components/widgets/Features.astro';
 import UltimasLecturas from '~/components/blog/UltimasLecturas.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const meta = {
@@ -26,8 +22,6 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     callToAction={{ text: '', href: getPermalink('#trabajos'), icon: 'tabler:device-laptop' }}
     callToAction2={{ text: '+++++', href: '#espacio' }}
@@ -40,16 +34,12 @@ const meta = {
     </Fragment>
   </Hero>
 
-  <!-- <Note /> -->
-
   <Trabajos
     highlight="Trabajos"
     title="Trabajos más recientes"
     subtitle="aquí te mostramos un adelanto de todo lo que hemos hecho hasta ahora"
     items={}
   />
-
-  <!-- Steps Widget ****************** -->
 
   <Steps
     title="El Triskel en la cultura celta representa el equilibrio entre cuerpo, mente y espíritu."
@@ -82,8 +72,6 @@ const meta = {
       alt: 'Steps image',
     }}
   />
-
-  <!-- Features2 Widget ************** -->
 
   <Features2
     highlight="Items"
@@ -129,8 +117,6 @@ const meta = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
   <Content
     highlight="Servicios"
     title="qué te podemos ofrecer..."
@@ -169,7 +155,7 @@ const meta = {
     subtitle="Disponemos de una excelente ubicación"
     items={[
       {
-        title: 'Carretera',
+        title: 'Coche',
         description: 'por carretera nacional hasta el estudio',
       },
       {
@@ -185,7 +171,7 @@ const meta = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Accesos</h3>
-      se puede acceder fácilmente al Triskel por:
+      se puede llegar fácilmente a Triskel con:
     </Fragment>
 
     <Fragment slot="content2">
@@ -246,7 +232,6 @@ const meta = {
     information={`En la sección de lecturas podrás encontrar documentación, sobre los puntos importantes que debes conocer`}
     postIds={['1.md', '2.md', '3.md', '4.md']}
   />
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     callToAction={{
