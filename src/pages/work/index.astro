@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from '@astrojs/image/components';
+const works = await getCollection('work');
+---
+
+<div>
+  <ul>
+    {
+      works.map((work) => (
+        <>
+          <li>
+            <a href={`/work/${work.slug}`}>{work.data.title}</a>
+            <time datetime={work.data.publishedDate.toISOString()}>{work.data.publishedDate.toDateString()}</time>
+            <hr />
+            {work.data.image.src}
+            <hr />
+          </li>
+          <Image src={work.data.image.src} format="jpeg" height={300} aspectRatio="1024:768" alt="The Astro logo" />
+        </>
+      ))
+    }
+  </ul>
+</div>
