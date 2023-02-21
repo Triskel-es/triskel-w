@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'Triskel',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://triskel.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
