@@ -3,43 +3,57 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'P',
+      text: '',
+      icon: 'tabler:clear-all',
       links: [
         {
-          text: 'Features',
-          href: '#',
+          text: 'Trabajos',
+          href: '#trabajos',
         },
         {
-          text: 'Pricing',
-          href: '#',
+          text: 'Raices',
+          href: '#raices',
         },
         {
-          text: 'About us',
-          href: '#',
+          text: 'Items',
+          href: '#items',
         },
         {
-          text: 'Contact',
-          href: '#',
+          text: 'Servicios',
+          href: '#servicios',
         },
         {
-          text: 'Terms',
+          text: 'Koordenadas',
+          href: '#koordenadas',
+        },
+        {
+          text: 'Espacio',
+          href: '#espacio',
+        },
+        {
+          text: 'Lecturas',
+          href: '#lecturas',
+        },
+        {
+          text: '...Contacto',
+          href: '#contacto',
+        },
+        {
+          text: '...work',
+          href: getPermalink('/work'),
+        },
+        {
+          text: '...Terms',
           href: getPermalink('/terms'),
         },
         {
-          text: 'Privacy policy',
+          text: '...Privacy policy',
           href: getPermalink('/privacy'),
         },
       ],
     },
-    {
-      text: 'B',
-    },
-    {
-      text: 'L',
-      href: getBlogPermalink(),
-    },
   ],
-  actions: [{ type: 'button', text: 'C', href: '#' }],
+  // actions: [{ type: 'button', text: 'C', href: '#' }],
 };
 
 export const footerData = {

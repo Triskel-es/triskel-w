@@ -32,26 +32,33 @@ const {
   <GaleriaOrigin />
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 pt-[76px] pointer-events-none"></div>
-    <div class="py-8">
-      <div class="-mt-[550px] text-center pb-2 max-w-screen-lg mx-auto">
+    <div class="py-8 w-fit">
+      <div class="-mt-[28rem] font-semibold text-center pb-2 max-w-screen-lg mx-auto">
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb0 font-heading dark:text-gray-200"
+              class="text-5xl md:text-6xl leading-tighter tracking-tighter mb-3 font-heading dark:text-gray-200"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
-          <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+          {
+            subtitle && (
+              <p
+                class="text-xl font-light md:text-2xl lg:text-3xl text-muted mb-6 dark:text-slate-300"
+                set:html={subtitle}
+              />
+            )
+          }
+          <div class="max-w-xs md:max-w-lg m-auto flex flex-nowrap flex-row justify-center gap-4">
             {
               callToAction && (
-                <div class="flex w-full sm:w-auto">
+                <div class="flex w-full">
                   {typeof callToAction === 'string' ? (
                     <Fragment set:html={callToAction} />
                   ) : (
-                    <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} target="_blank" rel="noopener">
+                    <a class="btn btn-primary w-full" href={callToAction?.href} target="" rel="noopener">
                       {callToAction?.icon && (
                         <>
                           <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5" />{' '}
@@ -65,7 +72,7 @@ const {
             }
             {
               callToAction2 && (
-                <div class="flex w-full sm:w-auto">
+                <div class="flex w-full">
                   {typeof callToAction2 === 'string' ? (
                     <Fragment set:html={callToAction2} />
                   ) : (

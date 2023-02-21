@@ -3,21 +3,21 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'Triskel',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://triskel.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'El titulo es triskel',
-  description: '🚀 Es nuestra descripcion',
+  title: 'Triskel',
+  description: 'donde puedes transformar lo que imaginas, en una película ',
 
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'dark', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
-  language: 'en',
+  language: 'es',
   textDirection: 'ltr',
 
-  dateFormatter: new Intl.DateTimeFormat('en', {
+  dateFormatter: new Intl.DateTimeFormat('es', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
